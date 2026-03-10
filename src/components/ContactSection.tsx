@@ -38,7 +38,7 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-0.5">Email</p>
-              <p className="text-sm font-medium text-foreground">hello@muhammadtahasattar.com</p>
+              <p className="text-sm font-medium text-foreground">hunainakramhussain12345@gmail.com</p>
             </div>
           </div>
           <div className="rounded-xl bg-card border border-border p-5 flex items-center gap-4">

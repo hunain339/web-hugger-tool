@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code, Cpu, Shield, Rocket } from "lucide-react";
+import { Code, Globe, Palette, Terminal } from "lucide-react";
 
 const skills = [
-  { icon: Code, label: "Full-Stack Development" },
-  { icon: Cpu, label: "AI & Machine Learning" },
-  { icon: Shield, label: "Cybersecurity" },
-  { icon: Rocket, label: "Entrepreneurship" },
+  { icon: Terminal, label: "Python & Django" },
+  { icon: Code, label: "Frontend Development" },
+  { icon: Palette, label: "Web Design" },
+  { icon: Globe, label: "Web Systems" },
 ];
 
 const AboutSection = () => {
@@ -23,30 +23,31 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {/* Left */}
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">
               About Me
             </p>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-foreground">
-              Building the future,
+              Learning, building,
               <br />
-              <span className="text-gradient-primary">one project at a time</span>
+              <span className="text-gradient-primary">and growing every day</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              I'm an 18-year-old entrepreneur and developer based in Karachi, Pakistan.
-              I founded <span className="text-foreground font-medium">Alpha Orbit</span> — a next-generation
-              digital agency — and I'm building products like <span className="text-foreground font-medium">AlphaSend</span> and{" "}
-              <span className="text-foreground font-medium">The Mart</span>.
+              I'm <span className="text-foreground font-medium">Muhammad Hunain Hussain</span>, a Computer Science
+              student at Behria College in Karachi, Pakistan. I've recently completed the
+              basics of frontend development and Python programming.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Currently working as a <span className="text-foreground font-medium">Junior Web Designer at Alpha Orbit</span>,
+              I'm continuing to explore Python and diving into Django to build
+              real-world web applications.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My journey spans Python, cybersecurity, AI/ML, and data science.
-              I believe in learning by doing, shipping fast, and constantly iterating.
-              When I'm not coding, you'll find me exploring new technologies or brainstorming the next big idea.
+              I'm excited to apply my skills and keep learning in the ever-evolving
+              field of web development. The rest? You'll see.
             </p>
           </div>
 
-          {/* Right — Skills grid */}
           <div className="grid grid-cols-2 gap-4">
             {skills.map(({ icon: Icon, label }, i) => (
               <motion.div
