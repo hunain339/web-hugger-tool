@@ -1,17 +1,17 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Mail, Github } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          © 2025 M. Taha Sattar. All rights reserved.
+          © 2026 Muhammad Hunain Hussain. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           {[
+            { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hunain-hussain-305a90382" },
+            { icon: Mail, href: "mailto:hunainakramhussain12345@gmail.com" },
             { icon: Github, href: "https://github.com" },
-            { icon: Linkedin, href: "https://pk.linkedin.com/in/taha-arain" },
-            { icon: Twitter, href: "https://twitter.com/iamfunterpie" },
           ].map(({ icon: Icon, href }) => (
             <a
               key={href}

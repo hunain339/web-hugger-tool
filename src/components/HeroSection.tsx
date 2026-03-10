@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -7,13 +7,10 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden"
     >
-      {/* Decorative grid */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: "linear-gradient(hsl(168 80% 50% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(168 80% 50% / 0.3) 1px, transparent 1px)",
         backgroundSize: "60px 60px",
       }} />
-
-      {/* Glow orb */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -23,7 +20,7 @@ const HeroSection = () => {
           transition={{ delay: 0.2 }}
           className="text-sm uppercase tracking-[0.3em] text-primary font-medium mb-6"
         >
-          Founder · Developer · Tech Explorer
+          CS Student · Python Developer · Web Designer
         </motion.p>
 
         <motion.h1
@@ -32,8 +29,8 @@ const HeroSection = () => {
           transition={{ delay: 0.4, duration: 0.7 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold font-display leading-[1.05] mb-6"
         >
-          <span className="text-foreground">M. Taha</span>{" "}
-          <span className="text-gradient-primary">Sattar</span>
+          <span className="text-foreground">Muhammad</span>{" "}
+          <span className="text-gradient-primary">Hunain</span>
         </motion.h1>
 
         <motion.p
@@ -42,11 +39,10 @@ const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          18-year-old entrepreneur from Karachi building{" "}
-          <span className="text-foreground font-medium">AlphaSend</span>,{" "}
-          <span className="text-foreground font-medium">The Mart</span>, and{" "}
-          <span className="text-foreground font-medium">Alpha Digital</span>.
-          Passionate about AI, cybersecurity, and innovative tech solutions.
+          Computer Science student from Karachi building real-world web systems.
+          Junior Web Designer at{" "}
+          <span className="text-foreground font-medium">Alpha Orbit</span>.
+          Exploring Python, Django, and modern frontend development.
         </motion.p>
 
         <motion.div
@@ -56,10 +52,10 @@ const HeroSection = () => {
           className="flex items-center justify-center gap-5 mb-16"
         >
           <a
-            href="#projects"
+            href="#about"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity shadow-glow"
           >
-            View Projects
+            Learn More
           </a>
           <a
             href="#contact"
@@ -76,9 +72,9 @@ const HeroSection = () => {
           className="flex items-center justify-center gap-5"
         >
           {[
+            { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hunain-hussain-305a90382" },
+            { icon: Mail, href: "mailto:hunainakramhussain12345@gmail.com" },
             { icon: Github, href: "https://github.com" },
-            { icon: Linkedin, href: "https://pk.linkedin.com/in/taha-arain" },
-            { icon: Twitter, href: "https://twitter.com/iamfunterpie" },
           ].map(({ icon: Icon, href }) => (
             <a
               key={href}
