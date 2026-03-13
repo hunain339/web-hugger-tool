@@ -34,7 +34,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               I'm <span className="text-foreground font-medium">Muhammad Hunain Hussain</span>, a Computer Science
-              student at Behria College in Karachi, Pakistan. I've recently completed the
+              student at Bahria College (Inter) in Karachi, Pakistan. I've recently completed the
               basics of frontend development and Python programming.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

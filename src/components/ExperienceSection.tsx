@@ -53,8 +53,8 @@ const ExperienceSection = () => {
               <GraduationCap size={22} className="text-accent-foreground" />
             </div>
             <div>
-              <h3 className="text-lg font-bold font-display text-foreground">Behria College</h3>
-              <p className="text-sm text-primary font-medium mb-2">Matric · Computer Science</p>
+              <h3 className="text-lg font-bold font-display text-foreground">Bahria College (Inter)</h3>
+              <p className="text-sm text-primary font-medium mb-2">Intermediate · Computer Science</p>
               <p className="text-xs text-muted-foreground">2025 – 2032</p>
             </div>
           </motion.div>
