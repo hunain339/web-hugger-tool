@@ -38,16 +38,21 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-0.5">Email</p>
-              <p className="text-sm font-medium text-foreground">hunainakramhussain12345@gmail.com</p>
+              <p className="text-sm font-medium text-foreground">
+                hunainakramhussain12345@gmail.com
+              </p>
             </div>
           </div>
+
           <div className="rounded-xl bg-card border border-border p-5 flex items-center gap-4">
             <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0">
               <MapPin size={18} className="text-primary-foreground" />
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-0.5">Location</p>
-              <p className="text-sm font-medium text-foreground">Karachi, Pakistan</p>
+              <p className="text-sm font-medium text-foreground">
+                Karachi, Pakistan
+              </p>
             </div>
           </div>
         </motion.div>
@@ -56,26 +61,36 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.5 }}
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
           className="rounded-xl bg-card border border-border p-8 space-y-5"
-          onSubmit={(e) => e.preventDefault()}
         >
           <div className="grid sm:grid-cols-2 gap-5">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              required
               className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
             />
+
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              required
               className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
             />
           </div>
+
           <textarea
             rows={5}
+            name="message"
             placeholder="Your Message"
+            required
             className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition resize-none"
           />
+
           <button
             type="submit"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity shadow-glow"
