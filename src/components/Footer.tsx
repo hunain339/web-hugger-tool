@@ -11,7 +11,7 @@ const Footer = () => {
           {[
             { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hunain-hussain-305a90382" },
             { icon: Mail, href: "mailto:hunainakramhussain12345@gmail.com" },
-            { icon: Github, href: "https://github.com" },
+            { icon: Github, href: "https://github.com/hunain339" },
           ].map(({ icon: Icon, href }) => (
             <a
               key={href}

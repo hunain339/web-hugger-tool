@@ -44,9 +44,9 @@ const pythonProjects: Project[] = [
 
 const webProjects: Project[] = [
   {
-    title: "AIMS Student Portal",
-    description: "A front-end clone of a student management portal built with HTML, CSS, and JavaScript fundamentals.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    title: "Portfolio Website",
+    description: "A modern, responsive developer portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion featuring smooth animations and interactive sections.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     codeUrl: "https://github.com/hunain339",
     icon: <Globe size={20} />,
   },
@@ -79,7 +79,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s, border-color 0.3s",
       }}
     >
-      {/* Gradient border glow on hover */}
       <div
         className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
