@@ -27,15 +27,12 @@ const CertificatesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">
-            Achievements
-          </p>
+          <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">Achievements</p>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
             My <span className="text-gradient-primary">Certificates</span>
           </h2>
         </motion.div>
 
-        {/* Flexbox envelope-style cards */}
         <div className="flex flex-wrap justify-center gap-6">
           {certificates.map((cert, i) => (
             <motion.div
@@ -44,17 +41,16 @@ const CertificatesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.12 * i, duration: 0.5 }}
               onClick={() => setSelected(i)}
-              className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(50%-12px)] rounded-xl bg-card border border-border overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-glow hover:border-primary/30 hover:-translate-y-1.5 hover:scale-[1.02]"
+              role="button"
+              aria-label={`View ${cert.title} certificate`}
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && setSelected(i)}
+              className="group relative w-full sm:w-[calc(50%-12px)] rounded-xl bg-card border border-border overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-glow hover:border-primary/30 hover:-translate-y-1.5 hover:scale-[1.02]"
             >
-              {/* Envelope flap accent */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-
-              {/* Gradient overlay on hover */}
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                background: "linear-gradient(135deg, hsl(168 80% 50% / 0.06), hsl(270 60% 60% / 0.06))",
+                background: "linear-gradient(135deg, hsl(0 72% 51% / 0.06), hsl(340 60% 45% / 0.06))",
               }} />
-
-              {/* Card body */}
               <div className="p-6 flex items-start gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                   <Award size={22} className="text-primary-foreground" />
@@ -73,7 +69,6 @@ const CertificatesSection = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
@@ -94,6 +89,7 @@ const CertificatesSection = () => {
             >
               <button
                 onClick={() => setSelected(null)}
+                aria-label="Close certificate viewer"
                 className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all duration-200"
               >
                 <X size={16} />
