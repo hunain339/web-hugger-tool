@@ -55,7 +55,7 @@ const ExperienceSection = () => {
             <div>
               <h3 className="text-lg font-bold font-display text-foreground">Bahria College (Inter)</h3>
               <p className="text-sm text-primary font-medium mb-2">Intermediate · Computer Science</p>
-              <p className="text-xs text-muted-foreground">2025 – 2032</p>
+              <p className="text-xs text-muted-foreground">2025 – 2026</p>
             </div>
           </motion.div>
         </div>
