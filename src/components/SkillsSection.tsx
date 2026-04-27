@@ -12,22 +12,22 @@ const groups: SkillGroup[] = [
   {
     title: "Frontend",
     icon: Code2,
-    skills: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Framer Motion"],
+    skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "React / Next.js", "Tailwind CSS"],
   },
   {
     title: "Backend",
     icon: Server,
-    skills: ["Python", "Django", "Node.js", "REST APIs"],
+    skills: ["Python", "Django", "Django REST Framework", "REST APIs"],
   },
   {
-    title: "Databases",
+    title: "Database & Services",
     icon: Database,
-    skills: ["PostgreSQL", "SQLite", "MongoDB"],
+    skills: ["PostgreSQL", "Supabase", "SQLite"],
   },
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["Git", "GitHub", "VS Code", "Vercel", "Vite", "Figma"],
+    skills: ["Git", "GitHub", "Vercel", "VS Code", "Vite"],
   },
 ];
 
