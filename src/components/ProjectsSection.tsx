@@ -1,7 +1,12 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { ExternalLink, Github, Code2, Globe, Terminal } from "lucide-react";
+import { useRef } from "react";
+import { ExternalLink, Github, Code2, Globe } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import previewWeather from "@/assets/preview-weather.jpg";
+import previewMusic from "@/assets/preview-music.jpg";
+import previewWater from "@/assets/preview-water.jpg";
+import previewMain from "@/assets/preview-main.jpg";
+import previewAims from "@/assets/preview-aims.jpg";
 
 interface Project {
   title: string;
@@ -9,115 +14,120 @@ interface Project {
   tech: string[];
   codeUrl: string;
   liveUrl?: string;
-  icon: React.ReactNode;
+  image: string;
 }
 
 const pythonProjects: Project[] = [
   {
     title: "Weather Mini App",
-    description: "A Python application that fetches real-time weather data using the Requests module and external APIs.",
+    description: "Fetches real-time weather data from external APIs using Python's Requests module — clean console output with error handling.",
     tech: ["Python", "Requests", "API"],
     codeUrl: "https://github.com/hunain339/python-work/blob/main/request%20module%202.py",
-    icon: <Terminal size={20} />,
+    image: previewWeather,
   },
   {
     title: "Music Playlist Manager",
-    description: "A command-line music list manager built in Python for organizing and managing playlists efficiently.",
-    tech: ["Python", "Data Structures"],
+    description: "A CLI music list manager built in Python for organizing, adding and managing playlists with persistent state.",
+    tech: ["Python", "Data Structures", "CLI"],
     codeUrl: "https://github.com/hunain339/python-work/blob/main/music%20list.py",
-    icon: <Terminal size={20} />,
+    image: previewMusic,
   },
   {
     title: "Water Intake Tracker",
-    description: "A Python app that helps users track and monitor their daily water intake with smart reminders.",
+    description: "Helps users track their daily water intake, set goals, and monitor hydration habits with smart logic.",
     tech: ["Python", "CLI"],
     codeUrl: "https://github.com/hunain339/python-work/blob/main/water%20app.py",
-    icon: <Terminal size={20} />,
+    image: previewWater,
   },
   {
-    title: "Main Project",
-    description: "A comprehensive Python project showcasing core programming concepts including OOP and file handling.",
+    title: "Core Python Project",
+    description: "A comprehensive Python project showcasing OOP principles, file handling, and clean modular architecture.",
     tech: ["Python", "OOP", "File I/O"],
     codeUrl: "https://github.com/hunain339/python-work/blob/main/main%20project.py",
-    icon: <Terminal size={20} />,
+    image: previewMain,
   },
 ];
 
 const webProjects: Project[] = [
   {
     title: "AIMS Coaching Website",
-    description: "A professional coaching institute website featuring responsive design, smooth animations, course listings, and a modern UI built with pure HTML & CSS.",
-    tech: ["HTML", "CSS", "Responsive Design"],
+    description: "A professional coaching institute website with responsive design, smooth animations, course listings, and a modern UI built with pure HTML & CSS.",
+    tech: ["HTML", "CSS", "Responsive"],
     codeUrl: "https://github.com/hunain339/Aims-caoching-website-by-M-Hunain",
     liveUrl: "https://hunain339.github.io/Aims-caoching-website-by-M-Hunain/",
-    icon: <Globe size={20} />,
+    image: previewAims,
   },
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
-  const [hovered, setHovered] = useState(false);
-
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ delay: index * 0.12, duration: 0.5, ease: "easeOut" }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group relative rounded-xl bg-card border border-border p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-glow hover:border-primary/30"
-      style={{
-        transform: hovered ? "translateY(-6px) scale(1.02)" : "translateY(0) scale(1)",
-        transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s, border-color 0.3s",
-      }}
+      transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
+      whileHover={{ y: -8 }}
+      className="glow-border group relative rounded-2xl bg-card border border-border overflow-hidden flex flex-col transition-all duration-300 hover:shadow-glow hover:border-primary/40"
     >
-      <div
-        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, hsl(0 72% 51% / 0.06), hsl(340 60% 45% / 0.06))" }}
-      />
+      {/* Image */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          loading="lazy"
+          width={1024}
+          height={640}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+      </div>
 
-      <div className="flex items-center gap-3 relative z-10">
-        <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 text-primary-foreground">
-          {project.icon}
+      {/* Content */}
+      <div className="p-6 flex flex-col gap-4 flex-1">
+        <h3 className="text-xl font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
+          {project.title}
+        </h3>
+
+        <p className="text-sm text-muted-foreground leading-relaxed flex-1">{project.description}</p>
+
+        <div className="flex flex-wrap gap-1.5">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20"
+            >
+              {t}
+            </span>
+          ))}
         </div>
-        <h3 className="text-lg font-bold font-display text-foreground">{project.title}</h3>
-      </div>
 
-      <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{project.description}</p>
-
-      <div className="flex flex-wrap gap-2 relative z-10">
-        {project.tech.map((t) => (
-          <span key={t} className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">{t}</span>
-        ))}
-      </div>
-
-      <div className="mt-auto pt-2 flex items-center gap-4 relative z-10">
-        <a
-          href={project.codeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View source code for ${project.title}`}
-          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-foreground transition-colors duration-200 group/link"
-        >
-          <Github size={16} />
-          <span>View Code</span>
-          <ExternalLink size={14} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200" />
-        </a>
-        {project.liveUrl && (
+        <div className="flex items-center gap-3 pt-1">
           <a
-            href={project.liveUrl}
+            href={project.codeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View live preview of ${project.title}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-foreground transition-colors duration-200 group/link"
+            aria-label={`View source code for ${project.title}`}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors"
           >
-            <Globe size={16} />
-            <span>Live Preview</span>
-            <ExternalLink size={14} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200" />
+            <Github size={14} />
+            Source
           </a>
-        )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View live preview of ${project.title}`}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+            >
+              Live Demo
+              <ExternalLink size={12} />
+            </a>
+          )}
+        </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
@@ -127,17 +137,22 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-28 px-6" ref={ref}>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">Portfolio</p>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
-            My <span className="text-gradient-primary">Projects</span>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+            Portfolio
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Featured <span className="text-gradient-primary">Projects</span>
           </h2>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            A selection of recent work — from CLI tools to responsive web experiences.
+          </p>
         </motion.div>
 
         <Tabs defaultValue="python" className="w-full">
@@ -147,20 +162,26 @@ const ProjectsSection = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex justify-center mb-10"
           >
-            <TabsList className="bg-secondary border border-border">
-              <TabsTrigger value="python" className="gap-2 data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
-                <Code2 size={16} />
-                Python Projects
+            <TabsList className="bg-secondary border border-border p-1">
+              <TabsTrigger
+                value="python"
+                className="gap-2 data-[state=active]:bg-primary/15 data-[state=active]:text-primary"
+              >
+                <Code2 size={14} />
+                Python
               </TabsTrigger>
-              <TabsTrigger value="web" className="gap-2 data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
-                <Globe size={16} />
-                Web Basics
+              <TabsTrigger
+                value="web"
+                className="gap-2 data-[state=active]:bg-primary/15 data-[state=active]:text-primary"
+              >
+                <Globe size={14} />
+                Web
               </TabsTrigger>
             </TabsList>
           </motion.div>
 
           <TabsContent value="python">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {pythonProjects.map((project, i) => (
                 <ProjectCard key={project.title} project={project} index={i} />
               ))}
