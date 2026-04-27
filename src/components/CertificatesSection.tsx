@@ -48,9 +48,7 @@ const CertificatesSection = () => {
               className="group relative w-full sm:w-[calc(50%-12px)] rounded-xl bg-card border border-border overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-glow hover:border-primary/30 hover:-translate-y-1.5 hover:scale-[1.02]"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                background: "linear-gradient(135deg, hsl(0 72% 51% / 0.06), hsl(340 60% 45% / 0.06))",
-              }} />
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-primary/5" />
               <div className="p-6 flex items-start gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                   <Award size={22} className="text-primary-foreground" />
