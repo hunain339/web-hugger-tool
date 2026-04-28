@@ -4,6 +4,7 @@ import { ExternalLink, Github, Code2, Globe, Sparkles, Star } from "lucide-react
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import { toast } from "@/hooks/use-toast";
+import Tilt3D from "./Tilt3D";
 import previewWeather from "@/assets/preview-weather.jpg";
 import previewMusic from "@/assets/preview-music.jpg";
 import previewWater from "@/assets/preview-water.jpg";
@@ -167,14 +168,16 @@ const FlagshipCard = ({ project }: { project: Project }) => (
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
-    <motion.article
+    <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -8 }}
-      className="glow-border group relative rounded-2xl bg-card border border-border overflow-hidden flex flex-col transition-all duration-300 hover:shadow-glow hover:border-primary/40"
+      style={{ perspective: 1200 }}
     >
+      <Tilt3D intensity={6} className="h-full">
+        <article className="glow-border group relative rounded-2xl bg-card border border-border overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-glow hover:border-primary/40 hover:-translate-y-2">
+
       <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
         <img
           src={project.image}
@@ -233,7 +236,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           )}
         </div>
       </div>
-    </motion.article>
+        </article>
+      </Tilt3D>
+    </motion.div>
   );
 };
 
