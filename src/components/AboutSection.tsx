@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import profilePic from "@/assets/mypic.jpeg";
 
@@ -9,11 +9,25 @@ const stats = [
 ];
 
 const AboutSection = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const imgY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const bgY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const bg2Y = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="about" className="py-28 px-6" ref={ref}>
+    <section id="about" className="py-28 px-6 relative overflow-hidden" ref={ref}>
+      <motion.div
+        aria-hidden
+        style={{ y: bgY }}
+        className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
+      />
+      <motion.div
+        aria-hidden
+        style={{ y: bg2Y }}
+        className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
+      />
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,18 +49,24 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ y: imgY }}
             className="md:col-span-2 flex justify-center"
           >
-            <div className="relative group">
-              <div className="absolute -inset-3 rounded-2xl bg-gradient-primary opacity-20 blur-2xl group-hover:opacity-30 transition" />
-              <div className="relative w-64 h-80 rounded-2xl overflow-hidden border border-border shadow-card">
+            <div className="relative group" style={{ perspective: 1000 }}>
+              <div className="absolute -inset-3 rounded-2xl bg-gradient-primary opacity-25 blur-2xl group-hover:opacity-40 transition" />
+              <motion.div
+                whileHover={{ rotateY: 8, rotateX: -4, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                className="relative w-64 h-80 rounded-2xl overflow-hidden border border-border shadow-card"
+                style={{ transformStyle: "preserve-3d" }}
+              >
                 <img
                   src={profilePic}
                   alt="Muhammad Hunain Hussain"
                   loading="lazy"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 

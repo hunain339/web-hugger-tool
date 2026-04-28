@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState, lazy, Suspense } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from "lucide-react";
 import profilePic from "@/assets/mypic.jpeg";
+import MagneticButton from "./MagneticButton";
 
 const Hero3DScene = lazy(() => import("./Hero3DScene"));
 
@@ -94,12 +95,11 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-5 text-foreground"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-5 text-foreground text-balance"
             >
-              Muhammad{" "}
-              <span className="text-gradient-primary">Hunain</span>
-              <br />
-              Hussain
+              Crafting{" "}
+              <span className="text-gradient-primary">digital experiences</span>{" "}
+              that scale.
             </motion.h1>
 
             <motion.div
@@ -117,9 +117,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.5 }}
-              className="text-base md:text-lg text-muted-foreground max-w-xl mb-9 leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground max-w-xl mb-9 leading-relaxed text-balance"
             >
-              CS student from Karachi crafting scalable, user-centric web applications with
+              I'm <span className="text-foreground font-medium">Muhammad Hunain Hussain</span> — a CS student from Karachi building scalable, user-centric web apps with
               <span className="text-foreground font-medium"> React</span>,
               <span className="text-foreground font-medium"> Python</span>, and
               <span className="text-foreground font-medium"> Django</span>. Currently a Junior Web Designer at Alpha Orbit.
@@ -131,22 +131,22 @@ const HeroSection = () => {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-10"
             >
-              <a
+              <MagneticButton
                 href="#projects"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 hover:scale-[1.03] transition-all duration-300 shadow-glow"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-glow"
               >
                 Explore My Projects
                 <ArrowDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
-              </a>
-              <a
+              </MagneticButton>
+              <MagneticButton
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary hover:scale-[1.03] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary transition-all duration-300"
               >
                 <Download size={14} />
                 Download Resume
-              </a>
+              </MagneticButton>
             </motion.div>
 
             <motion.div

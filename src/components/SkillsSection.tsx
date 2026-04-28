@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, lazy, Suspense } from "react";
 import { Code2, Server, Database, Wrench } from "lucide-react";
+
+const Skills3DOrbit = lazy(() => import("./Skills3DOrbit"));
 
 interface SkillGroup {
   title: string;
@@ -36,8 +38,14 @@ const SkillsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-28 px-6 relative" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-28 px-6 relative overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 mask-radial-fade pointer-events-none">
+        <Suspense fallback={null}>
+          {isInView && <Skills3DOrbit />}
+        </Suspense>
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -65,7 +73,7 @@ const SkillsSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 * i, duration: 0.5, ease: "easeOut" }}
                 whileHover={{ y: -6 }}
-                className="glow-border group rounded-2xl bg-card border border-border p-6 transition-all duration-300 hover:shadow-glow hover:border-primary/40"
+                className="glow-border group rounded-2xl bg-card/80 backdrop-blur-sm border border-border p-6 transition-all duration-300 hover:shadow-glow hover:border-primary/40"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <Icon size={22} className="text-primary" />

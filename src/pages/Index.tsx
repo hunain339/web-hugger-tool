@@ -8,11 +8,19 @@ import CertificatesSection from "@/components/CertificatesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ScrollProgress from "@/components/ScrollProgress";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="min-h-screen bg-background noise"
+      >
+        <ScrollProgress />
         <Navbar />
         <main>
           <HeroSection />
@@ -24,7 +32,7 @@ const Index = () => {
           <ContactSection />
         </main>
         <Footer />
-      </div>
+      </motion.div>
     </ThemeProvider>
   );
 };
