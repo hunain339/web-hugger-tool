@@ -2,6 +2,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Github, Code2, Globe, Sparkles, Star } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
+import { toast } from "@/hooks/use-toast";
 import previewWeather from "@/assets/preview-weather.jpg";
 import previewMusic from "@/assets/preview-music.jpg";
 import previewWater from "@/assets/preview-water.jpg";
