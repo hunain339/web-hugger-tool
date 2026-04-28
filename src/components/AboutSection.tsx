@@ -14,6 +14,7 @@ const AboutSection = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], [60, -60]);
   const bgY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const bg2Y = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
     <section id="about" className="py-28 px-6 relative overflow-hidden" ref={ref}>
@@ -24,7 +25,7 @@ const AboutSection = () => {
       />
       <motion.div
         aria-hidden
-        style={{ y: useTransform(scrollYProgress, [0, 1], [40, -40]) }}
+        style={{ y: bg2Y }}
         className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
       />
       <div className="max-w-6xl mx-auto">
