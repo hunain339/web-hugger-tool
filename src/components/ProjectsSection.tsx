@@ -122,16 +122,31 @@ const FlagshipCard = ({ project }: { project: Project }) => (
       </div>
       <div className="flex flex-wrap items-center gap-3 pt-2">
         {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View live demo of ${project.title}`}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-all hover:shadow-glow"
-          >
-            Live Demo
-            <ExternalLink size={14} />
-          </a>
+          <TooltipProvider delayDuration={150}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View live demo of ${project.title} (opens in a new tab)`}
+                  onClick={() =>
+                    toast({
+                      title: "Opening live demo in a new tab",
+                      description: `${project.title} — if it doesn't load, please disable ad blockers or try again in a moment.`,
+                    })
+                  }
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-all hover:shadow-glow"
+                >
+                  Live Demo
+                  <ExternalLink size={14} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="text-xs">
+                Opens in a new tab ↗
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
         {project.codeUrl && (
           <a
