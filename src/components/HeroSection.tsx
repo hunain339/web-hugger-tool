@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from "lucide-react";
 import profilePic from "@/assets/mypic.jpeg";
+
+const Hero3DScene = lazy(() => import("./Hero3DScene"));
 
 const roles = [
   "Full-Stack Developer",
@@ -43,6 +45,12 @@ const HeroSection = () => {
     >
       {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-40" />
+
+      {/* 3D animated scene */}
+      <Suspense fallback={null}>
+        <Hero3DScene />
+      </Suspense>
+
 
       {/* Ambient glows */}
       <div className="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
