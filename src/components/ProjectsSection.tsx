@@ -1,14 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, Code2, Globe, Sparkles, Star } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ExternalLink, Github, Sparkles, Star } from "lucide-react";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import { toast } from "@/hooks/use-toast";
 import Tilt3D from "./Tilt3D";
-import previewWeather from "@/assets/preview-weather.jpg";
-import previewMusic from "@/assets/preview-music.jpg";
-import previewWater from "@/assets/preview-water.jpg";
-import previewMain from "@/assets/preview-main.jpg";
+
 import previewAims from "@/assets/preview-aims.jpg";
 import previewTweet from "@/assets/preview-tweet.jpg";
 
@@ -32,36 +28,6 @@ const flagshipProject: Project = {
   featured: true,
 };
 
-const pythonProjects: Project[] = [
-  {
-    title: "Weather Mini App",
-    description: "Fetches real-time weather data from external APIs using Python's Requests module — clean console output with error handling.",
-    tech: ["Python", "Requests", "API"],
-    codeUrl: "https://github.com/hunain339/python-work/blob/main/request%20module%202.py",
-    image: previewWeather,
-  },
-  {
-    title: "Music Playlist Manager",
-    description: "A CLI music list manager built in Python for organizing, adding and managing playlists with persistent state.",
-    tech: ["Python", "Data Structures", "CLI"],
-    codeUrl: "https://github.com/hunain339/python-work/blob/main/music%20list.py",
-    image: previewMusic,
-  },
-  {
-    title: "Water Intake Tracker",
-    description: "Helps users track their daily water intake, set goals, and monitor hydration habits with smart logic.",
-    tech: ["Python", "CLI"],
-    codeUrl: "https://github.com/hunain339/python-work/blob/main/water%20app.py",
-    image: previewWater,
-  },
-  {
-    title: "Core Python Project",
-    description: "A comprehensive Python project showcasing OOP principles, file handling, and clean modular architecture.",
-    tech: ["Python", "OOP", "File I/O"],
-    codeUrl: "https://github.com/hunain339/python-work/blob/main/main%20project.py",
-    image: previewMain,
-  },
-];
 
 const webProjects: Project[] = [
   {
@@ -269,47 +235,11 @@ const ProjectsSection = () => {
         {/* Flagship */}
         <FlagshipCard project={flagshipProject} />
 
-        <Tabs defaultValue="web" className="w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex justify-center mb-10"
-          >
-            <TabsList className="bg-secondary border border-border p-1">
-              <TabsTrigger
-                value="web"
-                className="gap-2 data-[state=active]:bg-primary/15 data-[state=active]:text-primary"
-              >
-                <Globe size={14} />
-                Web
-              </TabsTrigger>
-              <TabsTrigger
-                value="python"
-                className="gap-2 data-[state=active]:bg-primary/15 data-[state=active]:text-primary"
-              >
-                <Code2 size={14} />
-                Python
-              </TabsTrigger>
-            </TabsList>
-          </motion.div>
-
-          <TabsContent value="web">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {webProjects.map((project, i) => (
-                <ProjectCard key={project.title} project={project} index={i} />
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="python">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {pythonProjects.map((project, i) => (
-                <ProjectCard key={project.title} project={project} index={i} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {webProjects.map((project, i) => (
+            <ProjectCard key={project.title} project={project} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
