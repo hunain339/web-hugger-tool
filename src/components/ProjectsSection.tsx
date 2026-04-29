@@ -4,7 +4,7 @@ import { ExternalLink, Github, Sparkles, Star } from "lucide-react";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import { toast } from "@/hooks/use-toast";
 import Tilt3D from "./Tilt3D";
-import previewMain from "@/assets/preview-main.jpg";
+
 import previewAims from "@/assets/preview-aims.jpg";
 import previewTweet from "@/assets/preview-tweet.jpg";
 
