@@ -35,7 +35,7 @@ const webProjects: Project[] = [
     description: "A professional coaching institute website with responsive design, smooth animations, course listings, and a modern UI built with pure HTML & CSS.",
     tech: ["HTML", "CSS", "Responsive"],
     codeUrl: "https://github.com/hunain339/Aims-caoching-website-by-M-Hunain",
-    liveUrl: "https://hunain339.github.io/Aims-caoching-website-by-M-Hunain/",
+    liveUrl: "https://aims-coaching-centre.vercel.app",
     image: previewAims,
   },
 ];
