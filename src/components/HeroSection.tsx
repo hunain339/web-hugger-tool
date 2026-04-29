@@ -1,83 +1,60 @@
 import { motion } from "framer-motion";
-import { useEffect, useState, lazy, Suspense } from "react";
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from "lucide-react";
-import profilePic from "@/assets/mypic.jpeg";
+import { lazy, Suspense } from "react";
+import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
+import hLogo from "@/assets/h-logo.png";
 import MagneticButton from "./MagneticButton";
 
 const Hero3DScene = lazy(() => import("./Hero3DScene"));
 
-const roles = [
-  "Full-Stack Developer",
-  "Computer Science Student",
-  "Python Engineer",
-  "UI/UX Enthusiast",
-];
-
 const HeroSection = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentRole = roles[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!deleting) {
-      if (displayed.length < currentRole.length) {
-        timeout = setTimeout(() => setDisplayed(currentRole.slice(0, displayed.length + 1)), 70);
-      } else {
-        timeout = setTimeout(() => setDeleting(true), 1800);
-      }
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 35);
-      } else {
-        setDeleting(false);
-        setRoleIndex((prev) => (prev + 1) % roles.length);
-      }
-    }
-    return () => clearTimeout(timeout);
-  }, [displayed, deleting, roleIndex]);
-
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden pt-24 pb-16"
     >
       {/* Grid pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-40" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      {/* 3D animated scene */}
+      {/* Faint circuit / code lines vibe via 3D scene */}
       <Suspense fallback={null}>
         <Hero3DScene />
       </Suspense>
-
 
       {/* Ambient glows */}
       <div className="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
-      {/* Floating dots */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-[10%] w-2 h-2 rounded-full bg-primary/40"
-      />
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/3 right-[15%] w-1.5 h-1.5 rounded-full bg-primary/50"
-      />
-      <motion.div
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/3 left-[20%] w-3 h-3 rounded-full bg-primary/20 blur-sm"
-      />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="grid md:grid-cols-[auto,1fr] items-center gap-10 md:gap-16">
+          {/* Metallic H Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85, rotateY: -20 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="relative flex-shrink-0 mx-auto md:mx-0"
+            style={{ perspective: 1000 }}
+          >
+            {/* Glow halo */}
+            <div className="absolute inset-0 rounded-[28%] bg-primary/30 blur-3xl scale-90 -z-10" />
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <img
+                src={hLogo}
+                alt="Muhammad Hunain Hussain — H monogram"
+                width={320}
+                height={320}
+                className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-[0_20px_60px_hsl(var(--primary)/0.45)]"
+              />
+              {/* Reflective floor */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-gradient-to-b from-primary/30 to-transparent blur-2xl rounded-full" />
+            </motion.div>
+          </motion.div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
           {/* Text */}
-          <div className="flex-1 text-center md:text-left">
+          <div className="text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -88,43 +65,58 @@ const HeroSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
               </span>
-              Available for opportunities
+              Open to Internship Opportunities
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-5 text-foreground text-balance"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] mb-4 text-foreground text-balance"
             >
-              Crafting{" "}
-              <span className="text-gradient-primary">digital experiences</span>{" "}
-              that scale.
+              Muhammad Hunain <span className="text-gradient-primary">Hussain</span>
             </motion.h1>
 
-            <motion.div
+            <motion.h2
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-lg md:text-xl font-medium text-muted-foreground mb-6 h-7 flex items-center justify-center md:justify-start gap-2"
+              transition={{ delay: 0.45, duration: 0.5 }}
+              className="text-lg md:text-2xl font-semibold text-primary mb-5 tracking-tight"
             >
-              <Sparkles size={16} className="text-primary" />
-              <span>{displayed}</span>
-              <span className="inline-block w-[2px] h-5 bg-primary animate-pulse" />
-            </motion.div>
+              Backend Developer <span className="text-muted-foreground/60 font-normal">|</span> Django &amp; DRF Specialist
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.5 }}
-              className="text-base md:text-lg text-muted-foreground max-w-xl mb-9 leading-relaxed text-balance"
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="text-base md:text-lg text-muted-foreground max-w-2xl mb-7 leading-relaxed"
             >
-              I'm <span className="text-foreground font-medium">Muhammad Hunain Hussain</span> — a CS student from Karachi building scalable, user-centric web apps with
-              <span className="text-foreground font-medium"> React</span>,
-              <span className="text-foreground font-medium"> Python</span>, and
-              <span className="text-foreground font-medium"> Django</span>. Currently a Junior Web Designer at Alpha Orbit.
+              Self-taught Backend Engineer · Building production-grade REST APIs · Currently a Junior Web Designer at Alpha Orbit, Karachi.
             </motion.p>
 
+            {/* Meta row: Karachi + Available */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 mb-8 text-sm text-muted-foreground"
+            >
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin size={14} className="text-primary" />
+                Karachi, Pakistan
+              </span>
+              <span className="hidden md:inline-block w-1 h-1 rounded-full bg-border" />
+              <span className="inline-flex items-center gap-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                </span>
+                Available Immediately
+              </span>
+            </motion.div>
+
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -132,23 +124,24 @@ const HeroSection = () => {
               className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-10"
             >
               <MagneticButton
-                href="#projects"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-glow"
-              >
-                Explore My Projects
-                <ArrowDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
-              </MagneticButton>
-              <MagneticButton
-                href="/resume.pdf"
+                href="/Hunain_CV_Pro.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-glow"
               >
-                <Download size={14} />
-                Download Resume
+                <Download size={16} />
+                Download CV
+              </MagneticButton>
+              <MagneticButton
+                href="#projects"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+              >
+                Explore Projects
+                <ArrowDown size={14} />
               </MagneticButton>
             </motion.div>
 
+            {/* Socials */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -173,39 +166,6 @@ const HeroSection = () => {
               ))}
             </motion.div>
           </div>
-
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-            className="flex-shrink-0"
-          >
-            <div className="relative group">
-              {/* Rotating gradient ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-2 rounded-full bg-gradient-primary opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500"
-              />
-              <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/40 shadow-glow">
-                <img
-                  src={profilePic}
-                  alt="Muhammad Hunain Hussain"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              {/* Floating badge */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-2 -right-2 px-3 py-1.5 rounded-full bg-card border border-border shadow-card text-xs font-semibold text-foreground flex items-center gap-1.5"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Karachi, PK
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </div>
 
