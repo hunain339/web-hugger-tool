@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { lazy, Suspense } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
-import hLogo from "@/assets/h-logo.png";
+import myPic from "@/assets/mypic.jpeg";
 import MagneticButton from "./MagneticButton";
 
 const Hero3DScene = lazy(() => import("./Hero3DScene"));
@@ -26,7 +26,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid md:grid-cols-[auto,1fr] items-center gap-10 md:gap-16">
-          {/* Metallic H Logo */}
+          {/* Profile Picture */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85, rotateY: -20 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -35,19 +35,27 @@ const HeroSection = () => {
             style={{ perspective: 1000 }}
           >
             {/* Glow halo */}
-            <div className="absolute inset-0 rounded-[28%] bg-primary/30 blur-3xl scale-90 -z-10" />
+            <div className="absolute inset-0 rounded-full bg-primary/30 blur-3xl scale-90 -z-10" />
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <img
-                src={hLogo}
-                alt="Muhammad Hunain Hussain — H monogram"
-                width={320}
-                height={320}
-                className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-[0_20px_60px_hsl(var(--primary)/0.45)]"
+              {/* Rotating gradient ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,hsl(var(--primary)),transparent,hsl(var(--primary)))] opacity-70 blur-[2px]"
               />
+              <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-1 bg-card">
+                <img
+                  src={myPic}
+                  alt="Muhammad Hunain Hussain — profile photo"
+                  width={320}
+                  height={320}
+                  className="w-full h-full object-cover rounded-full border border-primary/30 shadow-[0_20px_60px_hsl(var(--primary)/0.45)]"
+                />
+              </div>
               {/* Reflective floor */}
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-gradient-to-b from-primary/30 to-transparent blur-2xl rounded-full" />
             </motion.div>
