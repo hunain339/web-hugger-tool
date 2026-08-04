@@ -7,6 +7,7 @@ import Tilt3D from "./Tilt3D";
 
 import previewAims from "@/assets/preview-aims.jpg";
 import previewTweet from "@/assets/preview-tweet.jpg";
+import previewJobBoard from "@/assets/preview-jobboard.jpg";
 
 interface Project {
   title: string;
@@ -19,26 +20,35 @@ interface Project {
 }
 
 const flagshipProject: Project = {
-  title: "Hunain Gujjar Tweet",
+  title: "TweetBar — Social Platform",
   description:
-    "A full-featured, production-ready social media platform inspired by Twitter/X. Users can create accounts, post tweets, and interact with content in real time. Built with a robust backend architecture for scalability, security, and a seamless user experience.",
-  tech: ["Supabase", "Django REST", "Python", "PostgreSQL", "Bootstrap", "JavaScript"],
+    "A production social platform where users sign up, post, and interact in real time. I designed the PostgreSQL schema, built the Django REST API and auth layer, and deployed it end to end.",
+  tech: ["Django REST", "Python", "PostgreSQL", "Supabase", "JavaScript", "Bootstrap"],
   liveUrl: "https://hunain-gujjar-tweet-prod.vercel.app/",
   image: previewTweet,
   featured: true,
 };
 
-
 const webProjects: Project[] = [
   {
-    title: "AIMS Coaching Website",
-    description: "A professional coaching institute website with responsive design, smooth animations, course listings, and a modern UI built with pure HTML & CSS.",
+    title: "JobBoard — Job Marketplace",
+    description:
+      "A job marketplace with search, filtering and candidate profiles. Django backend with a normalised job/application schema, self-hosted on an AWS EC2 instance behind Nginx.",
+    tech: ["Django", "Python", "PostgreSQL", "AWS EC2", "Nginx"],
+    liveUrl: "http://13.49.209.152/",
+    image: previewJobBoard,
+  },
+  {
+    title: "AIMS Coaching Centre",
+    description:
+      "A live marketing site for a Karachi coaching institute — course listings, enquiry flow and a fully responsive layout that loads fast on low-end mobile connections.",
     tech: ["HTML", "CSS", "Responsive"],
     codeUrl: "https://github.com/hunain339/Aims-caoching-website-by-M-Hunain",
     liveUrl: "https://aims-coaching-centre.vercel.app",
     image: previewAims,
   },
 ];
+
 
 const FlagshipCard = ({ project }: { project: Project }) => (
   <motion.article
