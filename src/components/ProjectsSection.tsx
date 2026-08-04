@@ -238,7 +238,7 @@ const ProjectsSection = () => {
             Featured <span className="text-gradient-primary">Projects</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            A selection of recent work — from a production social platform to CLI tools and responsive sites.
+            Production systems I designed, built and deployed — backend, database and infrastructure included.
           </p>
         </motion.div>
 
