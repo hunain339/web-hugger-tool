@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
-import { Code2, Server, Database, Wrench } from "lucide-react";
+import { Code2, Server, Database, Cloud } from "lucide-react";
 
 const Skills3DOrbit = lazy(() => import("./Skills3DOrbit"));
 
@@ -12,26 +12,27 @@ interface SkillGroup {
 
 const groups: SkillGroup[] = [
   {
-    title: "Frontend",
-    icon: Code2,
-    skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "React / Next.js", "Tailwind CSS"],
-  },
-  {
     title: "Backend",
     icon: Server,
-    skills: ["Python", "Django", "Django REST Framework", "REST APIs"],
+    skills: ["Python", "Django", "Django REST Framework", "REST API design", "Authentication & security"],
   },
   {
-    title: "Database & Services",
+    title: "Data",
     icon: Database,
-    skills: ["PostgreSQL", "Supabase", "SQLite"],
+    skills: ["PostgreSQL", "Supabase", "SQLite", "Schema design"],
   },
   {
-    title: "Tools",
-    icon: Wrench,
-    skills: ["Git", "GitHub", "Vercel", "VS Code", "Vite"],
+    title: "DevOps",
+    icon: Cloud,
+    skills: ["AWS EC2", "Nginx / Gunicorn", "Vercel", "Git & GitHub"],
+  },
+  {
+    title: "Frontend",
+    icon: Code2,
+    skills: ["HTML5 & CSS3", "JavaScript", "Bootstrap", "React"],
   },
 ];
+
 
 const SkillsSection = () => {
   const ref = useRef(null);
@@ -59,8 +60,9 @@ const SkillsSection = () => {
             Skills & <span className="text-gradient-primary">Technologies</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            The stack I use to design, build, and ship modern web experiences.
+            The tools I actually work in day to day — grouped by where they sit in the stack.
           </p>
+
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
