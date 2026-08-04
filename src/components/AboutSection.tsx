@@ -3,10 +3,11 @@ import { useRef } from "react";
 import profilePic from "@/assets/mypic.jpeg";
 
 const stats = [
-  { value: "5+", label: "Projects Built" },
-  { value: "4", label: "Certificates" },
-  { value: "1+", label: "Years Coding" },
+  { value: "3", label: "Production Apps Shipped" },
+  { value: "CTO", label: "Alpha Orbit" },
+  { value: "BSAI", label: "Iqra University" },
 ];
+
 
 const AboutSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -39,8 +40,9 @@ const AboutSection = () => {
             About Me
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            Building with <span className="text-gradient-primary">curiosity</span> & care
+            Shipping <span className="text-gradient-primary">production systems</span>, not demos
           </h2>
+
         </motion.div>
 
         <div className="grid md:grid-cols-5 gap-12 items-center">
@@ -78,20 +80,21 @@ const AboutSection = () => {
             className="md:col-span-3 space-y-5"
           >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Muhammad Hunain Hussain</span>, a
-              Computer Science student at Bahria College (Inter) in Karachi, Pakistan. My journey
-              into tech started with a simple question — <em>"how do websites actually work?"</em> —
-              and quickly grew into a deep passion for building clean, scalable, user-centric web applications.
+              I've shipped a full social platform, a job marketplace running on AWS EC2, and client
+              sites in production — owning the parts most people avoid: schema design, REST API
+              architecture, auth and security, background pipelines, and deployment.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              I currently work as a <span className="text-foreground font-semibold">Junior Web Designer at Alpha Orbit</span>,
-              where I get to apply modern frontend practices to real client projects. Outside of work, I'm
-              deep into Python, Django, and the React ecosystem — always pushing to learn one more thing
-              that makes me a stronger full-stack engineer.
+              As <span className="text-foreground font-semibold">CTO at Alpha Orbit</span> I own the
+              entire backend: system design, database modelling, data pipelines, and the security
+              posture of everything we ship. Every decision is mine to defend in production.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              I care about thoughtful UI, performant code, and shipping work I'd be proud to put my name on.
+              Self-taught developer, now a{" "}
+              <span className="text-foreground font-semibold">BSAI student at Iqra University</span>{" "}
+              in Karachi. Python, Django and DRF are my core; I learn whatever the system needs next.
             </p>
+
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">

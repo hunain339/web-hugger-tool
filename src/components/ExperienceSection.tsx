@@ -5,11 +5,18 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const items = [
   {
     icon: Briefcase,
-    title: "Junior Web Designer",
+    title: "Chief Technology Officer",
     org: "Alpha Orbit · Karachi, Pakistan",
-    date: "January 2026 – Present",
+    date: "2026 – Present",
     badge: "Current",
     accent: "primary",
+  },
+  {
+    icon: GraduationCap,
+    title: "BS Artificial Intelligence",
+    org: "Iqra University · Karachi",
+    date: "In progress",
+    accent: "accent",
   },
   {
     icon: GraduationCap,
@@ -19,6 +26,7 @@ const items = [
     accent: "accent",
   },
 ];
+
 
 const ExperienceSection = () => {
   const ref = useRef<HTMLElement>(null);
