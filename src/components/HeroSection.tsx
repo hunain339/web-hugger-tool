@@ -82,25 +82,26 @@ const HeroSection = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] mb-4 text-foreground text-balance"
             >
-              Muhammad Hunain <span className="text-gradient-primary">Hussain</span>
+              I build backends that <span className="text-gradient-primary">stay up</span>
             </motion.h1>
 
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="text-lg md:text-2xl font-semibold text-primary mb-5 tracking-tight"
+              className="text-lg md:text-2xl font-semibold text-primary mb-6 tracking-tight"
             >
-              Backend Developer <span className="text-muted-foreground/60 font-normal">|</span> Django &amp; DRF Specialist
+              Muhammad Hunain Hussain <span className="text-muted-foreground/60 font-normal">|</span> CTO at Alpha Orbit
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="text-base md:text-lg text-muted-foreground max-w-2xl mb-7 leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed"
             >
-              Self-taught Backend Engineer · Building production-grade REST APIs · Currently a Junior Web Designer at Alpha Orbit, Karachi.
+              Django &amp; DRF engineer shipping production REST APIs, data pipelines, and secure
+              system architecture — from database schema to deployment on AWS EC2.
             </motion.p>
 
             {/* Meta row: Karachi + Available */}
@@ -108,17 +109,17 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 mb-8 text-sm text-muted-foreground"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 mb-8 text-sm text-muted-foreground"
             >
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-2">
                 <MapPin size={14} className="text-primary" />
                 Karachi, Pakistan
               </span>
               <span className="hidden md:inline-block w-1 h-1 rounded-full bg-border" />
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
                 </span>
                 Available Immediately
               </span>
@@ -129,25 +130,26 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-10"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10"
             >
+              <MagneticButton
+                href="#projects"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-300 shadow-glow"
+              >
+                View Work
+                <ArrowDown size={16} />
+              </MagneticButton>
               <MagneticButton
                 href="/Hunain_CV_Pro.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-glow"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-300"
               >
                 <Download size={16} />
-                Download CV
-              </MagneticButton>
-              <MagneticButton
-                href="#projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary transition-all duration-300"
-              >
-                Explore Projects
-                <ArrowDown size={14} />
+                Resume
               </MagneticButton>
             </motion.div>
+
 
             {/* Socials */}
             <motion.div
