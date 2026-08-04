@@ -147,11 +147,12 @@ const OrbitRing = ({ radius = 2.2, opacity = 0.35, tilt = Math.PI / 2.4 }) => {
 const Hero3DScene = () => {
   return (
     <div
-      className="absolute inset-0 pointer-events-none opacity-80"
+      className="absolute inset-0 pointer-events-none opacity-[0.22]"
       aria-hidden="true"
     >
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 45 }}
+        camera={{ position: [0, 0, 8], fov: 45 }}
+
         dpr={[1, 1.75]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
