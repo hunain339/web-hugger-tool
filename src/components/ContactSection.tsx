@@ -182,7 +182,7 @@ const ContactSection = () => {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
-              download={RESUME_FILENAME}
+              aria-label="Open resume PDF in a new tab"
               className="text-primary font-medium hover:underline"
             >
               View my resume (PDF)
