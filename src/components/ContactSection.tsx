@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { RESUME_URL, RESUME_FILENAME } from "@/lib/resume";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -174,6 +175,19 @@ const ContactSection = () => {
               </>
             )}
           </button>
+
+          <p className="text-xs text-muted-foreground pt-2">
+            Prefer the short version?{" "}
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              download={RESUME_FILENAME}
+              className="text-primary font-medium hover:underline"
+            >
+              View my resume (PDF)
+            </a>
+          </p>
         </motion.form>
       </div>
     </section>
