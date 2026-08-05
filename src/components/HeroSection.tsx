@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import myPic from "@/assets/mypic.jpeg";
 import MagneticButton from "./MagneticButton";
+import { RESUME_URL } from "@/lib/resume";
 
 const Hero3DScene = lazy(() => import("./Hero3DScene"));
 
@@ -140,7 +141,7 @@ const HeroSection = () => {
                 <ArrowDown size={16} />
               </MagneticButton>
               <MagneticButton
-                href="/Hunain_CV_Pro.pdf"
+                href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-300"

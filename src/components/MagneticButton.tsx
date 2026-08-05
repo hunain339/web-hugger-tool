@@ -10,6 +10,7 @@ interface MagneticButtonProps {
   strength?: number;
   target?: string;
   rel?: string;
+  download?: string | boolean;
   "aria-label"?: string;
 }
 
