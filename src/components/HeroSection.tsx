@@ -144,7 +144,6 @@ const HeroSection = () => {
                 href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open resume PDF in a new tab"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border bg-card text-foreground font-semibold text-sm hover:border-primary/50 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-300"
               >
                 <Download size={16} />
