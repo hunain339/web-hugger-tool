@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import myPic from "@/assets/mypic.jpeg";
 import MagneticButton from "./MagneticButton";
-import { RESUME_URL, RESUME_FILENAME } from "@/lib/resume";
+import { RESUME_URL } from "@/lib/resume";
 
 const Hero3DScene = lazy(() => import("./Hero3DScene"));
 
