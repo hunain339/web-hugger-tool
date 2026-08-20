@@ -32,6 +32,14 @@ const flagshipProject: Project = {
 
 const webProjects: Project[] = [
   {
+    title: "ChaiHub — Restaurant Reservations",
+    description:
+      "Full-stack restaurant platform with a real-time table reservation system. Built availability checking, an admin approval flow, Redis-based locking to prevent race conditions, and Celery-driven auto-expiry for unconfirmed bookings.",
+    tech: ["Django", "Django REST", "PostgreSQL", "Redis", "Celery", "JavaScript"],
+    liveUrl: "https://chai-hub.vercel.app",
+    image: previewChaiHub,
+  },
+  {
     title: "JobBoard — Job Marketplace",
     description:
       "A job marketplace with search, filtering and candidate profiles. Django backend with a normalised job/application schema, self-hosted on an AWS EC2 instance behind Nginx.",
