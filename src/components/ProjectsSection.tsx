@@ -8,6 +8,7 @@ import Tilt3D from "./Tilt3D";
 import previewAims from "@/assets/preview-aims.jpg";
 import previewTweet from "@/assets/preview-tweet.jpg";
 import previewJobBoard from "@/assets/preview-jobboard.jpg";
+import previewChaiHub from "@/assets/preview-chaihub.jpg";
 
 interface Project {
   title: string;
