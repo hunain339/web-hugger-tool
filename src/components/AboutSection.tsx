@@ -87,21 +87,30 @@ const AboutSection = () => {
             className="md:col-span-3 space-y-5"
           >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              I've shipped a full social platform, a job marketplace running on AWS EC2, and client
-              sites in production — owning the parts most people avoid: schema design, REST API
-              architecture, auth and security, background pipelines, and deployment.
+              Self-taught backend developer with 7+ months of hands-on Django/DRF development,
+              including Tweetbar — a full-featured Twitter-clone REST API covering auth, caching,
+              query optimization and full-text search.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              As <span className="text-foreground font-semibold">CTO at Alpha Orbit</span> I own the
-              entire backend: system design, database modelling, data pipelines, and the security
-              posture of everything we ship. Every decision is mine to defend in production.
+              I own the parts most people avoid: backend architecture, database design, data
+              pipelines, security and system design — from schema to deployment on AWS EC2 and
+              Vercel.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Self-taught developer, now a{" "}
-              <span className="text-foreground font-semibold">BSAI student at Iqra University</span>{" "}
-              in Karachi. Python, Django and DRF are my core; I learn whatever the system needs next.
+              Currently pursuing a{" "}
+              <span className="text-foreground font-semibold">BSAI at Iqra University</span> in
+              Karachi, with a long-term focus on AI and automation engineering.
             </p>
 
+            {/* Highlights */}
+            <ul className="space-y-2 pt-2">
+              {highlights.map((h) => (
+                <li key={h} className="text-sm text-muted-foreground flex gap-2 leading-relaxed">
+                  <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                  {h}
+                </li>
+              ))}
+            </ul>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">
