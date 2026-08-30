@@ -4,25 +4,18 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 const items = [
   {
-    icon: Briefcase,
-    title: "Chief Technology Officer",
-    org: "Alpha Orbit · Karachi, Pakistan",
-    date: "2026 – Present",
+    icon: GraduationCap,
+    title: "BS Artificial Intelligence (BSAI)",
+    org: "Iqra University · Gulshan Campus",
+    date: "In Progress",
     badge: "Current",
     accent: "primary",
   },
   {
     icon: GraduationCap,
-    title: "BS Artificial Intelligence",
-    org: "Iqra University · Karachi",
-    date: "In progress",
-    accent: "accent",
-  },
-  {
-    icon: GraduationCap,
-    title: "Bahria College (Inter)",
-    org: "Intermediate · Computer Science",
-    date: "2025 – 2026",
+    title: "Intermediate (ICS — Computer Science)",
+    org: "Bahria College DHA",
+    date: "2024 — 2026",
     accent: "accent",
   },
 ];
@@ -44,10 +37,10 @@ const ExperienceSection = () => {
           className="text-center mb-16"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
-            Experience & Education
+            Education
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            My <span className="text-gradient-primary">Journey</span>
+            My <span className="text-gradient-primary">Studies</span>
           </h2>
         </motion.div>
 

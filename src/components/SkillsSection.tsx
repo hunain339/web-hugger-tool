@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
-import { Code2, Server, Database, Cloud } from "lucide-react";
+import { Code2, Server, Database, Cloud, Boxes } from "lucide-react";
 
 const Skills3DOrbit = lazy(() => import("./Skills3DOrbit"));
 
@@ -12,24 +12,47 @@ interface SkillGroup {
 
 const groups: SkillGroup[] = [
   {
-    title: "Backend",
-    icon: Server,
-    skills: ["Python", "Django", "Django REST Framework", "REST API design", "Authentication & security"],
-  },
-  {
-    title: "Data",
-    icon: Database,
-    skills: ["PostgreSQL", "Supabase", "SQLite", "Schema design"],
-  },
-  {
-    title: "DevOps",
-    icon: Cloud,
-    skills: ["AWS EC2", "Nginx / Gunicorn", "Vercel", "Git & GitHub"],
-  },
-  {
-    title: "Frontend",
+    title: "Languages",
     icon: Code2,
-    skills: ["HTML5 & CSS3", "JavaScript", "Bootstrap", "React"],
+    skills: ["Python", "SQL", "Bash"],
+  },
+  {
+    title: "Frameworks",
+    icon: Server,
+    skills: ["Django", "Django REST Framework", "FastAPI (learning)"],
+  },
+  {
+    title: "Databases",
+    icon: Database,
+    skills: ["PostgreSQL", "MySQL", "SQLite"],
+  },
+  {
+    title: "Platforms & Tools",
+    icon: Cloud,
+    skills: [
+      "AWS EC2",
+      "Vercel",
+      "Supabase",
+      "Docker",
+      "Redis",
+      "Celery",
+      "Git & GitHub",
+      "Ubuntu/Linux CLI",
+      "Postman",
+    ],
+  },
+  {
+    title: "Concepts",
+    icon: Boxes,
+    skills: [
+      "REST API design",
+      "JWT auth",
+      "Caching",
+      "Rate limiting",
+      "N+1 query optimization",
+      "Full-text search",
+      "CI/CD",
+    ],
   },
 ];
 
