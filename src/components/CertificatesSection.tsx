@@ -1,13 +1,11 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { Award, X, Eye } from "lucide-react";
-import alphaorbit from "@/assets/alphaorbit.jpeg";
 import certificate1 from "@/assets/certificate1.png";
 import certificate2 from "@/assets/certificate2.png";
 import certificate3 from "@/assets/certificate3.png";
 
 const certificates = [
-  { src: alphaorbit, title: "Junior Front-End Intern", issuer: "Alpha Orbit", date: "October 2025" },
   { src: certificate1, title: "MS Office 2019 (Crash Programme)", issuer: "Ruby Commercial Centre", date: "July 2023" },
   { src: certificate2, title: "Python Certificate", issuer: "Sololearn", date: "June 2025" },
   { src: certificate3, title: "Web Development Certificate", issuer: "Sololearn", date: "June 2025" },
