@@ -92,9 +92,9 @@ const AboutSection = () => {
               query optimization and full-text search.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              I own the parts most people avoid: backend architecture, database design, data
-              pipelines, security and system design — from schema to deployment on AWS EC2 and
-              Vercel.
+              I take technical ownership of system design, database modelling, data pipelines,
+              and security — carrying each decision from schema design through production
+              deployment.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
               Currently pursuing a{" "}

@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
-import { Code2, Server, Database, Cloud, Boxes } from "lucide-react";
+import { Code2, Server, Database, Cloud, Boxes, Languages } from "lucide-react";
 
 const Skills3DOrbit = lazy(() => import("./Skills3DOrbit"));
 
@@ -36,7 +36,8 @@ const groups: SkillGroup[] = [
       "Docker",
       "Redis",
       "Celery",
-      "Git & GitHub",
+      "Git",
+      "GitHub",
       "Ubuntu/Linux CLI",
       "Postman",
     ],
@@ -53,6 +54,11 @@ const groups: SkillGroup[] = [
       "Full-text search",
       "CI/CD",
     ],
+  },
+  {
+    title: "Spoken Languages",
+    icon: Languages,
+    skills: ["Urdu — Native", "English — Professional"],
   },
 ];
 
