@@ -3,9 +3,16 @@ import { useRef } from "react";
 import profilePic from "@/assets/mypic.jpeg";
 
 const stats = [
-  { value: "3", label: "Production Apps Shipped" },
-  { value: "CTO", label: "Alpha Orbit" },
+  { value: "10+", label: "API Endpoints Shipped" },
+  { value: "7+ mo", label: "Django / DRF Experience" },
   { value: "BSAI", label: "Iqra University" },
+];
+
+const highlights = [
+  "Built and deployed a production REST API with 10+ endpoints — self-taught in under 8 months.",
+  "Documented query optimization with real, measured N+1 reduction metrics — engineering rigor, not just code.",
+  "Runs a structured self-curriculum: daily learning logs, performance optimization, system-level thinking.",
+  "Currently expanding into Linux systems and FastAPI toward an AI/automation engineering trajectory.",
 ];
 
 
