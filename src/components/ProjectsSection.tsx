@@ -5,10 +5,9 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/comp
 import { toast } from "@/hooks/use-toast";
 import Tilt3D from "./Tilt3D";
 
-import previewAims from "@/assets/preview-aims.jpg";
 import previewTweet from "@/assets/preview-tweet.jpg";
 import previewJobBoard from "@/assets/preview-jobboard.jpg";
-import previewChaiHub from "@/assets/preview-chaihub.jpg";
+import previewGuide from "@/assets/preview-main.jpg";
 
 interface Project {
   title: string;
@@ -21,10 +20,10 @@ interface Project {
 }
 
 const flagshipProject: Project = {
-  title: "TweetBar — Social Platform",
+  title: "Tweetbar — Twitter Clone REST API",
   description:
-    "A production social platform where users sign up, post, and interact in real time. I designed the PostgreSQL schema, built the Django REST API and auth layer, and deployed it end to end.",
-  tech: ["Django REST", "Python", "PostgreSQL", "Supabase", "JavaScript", "Bootstrap"],
+    "Built from scratch: JWT auth, tweet CRUD, comments, likes, notifications and view counters. Eliminated N+1 queries with select_related / prefetch_related — measured and documented performance gains. Integrated view-level and low-level caching, rate limiting and full-text search. Deployed live on Vercel with Supabase (PostgreSQL + storage); includes admin dashboard.",
+  tech: ["Django", "DRF", "PostgreSQL", "Supabase", "Vercel"],
   liveUrl: "https://hunain-gujjar-tweet-prod.vercel.app/",
   image: previewTweet,
   featured: true,
@@ -32,29 +31,19 @@ const flagshipProject: Project = {
 
 const webProjects: Project[] = [
   {
-    title: "ChaiHub — Restaurant Reservations",
+    title: "Job Board Platform",
     description:
-      "Full-stack restaurant platform with a real-time table reservation system. Built availability checking, an admin approval flow, Redis-based locking to prevent race conditions, and Celery-driven auto-expiry for unconfirmed bookings.",
-    tech: ["Django", "Django REST", "PostgreSQL", "Redis", "Celery", "JavaScript"],
-    liveUrl: "https://chai-hub.vercel.app",
-    image: previewChaiHub,
-  },
-  {
-    title: "JobBoard — Job Marketplace",
-    description:
-      "A job marketplace with search, filtering and candidate profiles. Django backend with a normalised job/application schema, self-hosted on an AWS EC2 instance behind Nginx.",
-    tech: ["Django", "Python", "PostgreSQL", "AWS EC2", "Nginx"],
+      "Deployed a full job board application to AWS EC2 with a working CI/CD pipeline. Handled infrastructure, deployment and domain configuration end-to-end.",
+    tech: ["Django", "DRF", "AWS EC2", "CI/CD"],
     liveUrl: "http://13.49.209.152/",
     image: previewJobBoard,
   },
   {
-    title: "AIMS Coaching Centre",
+    title: "DRF Reference Guide",
     description:
-      "A live marketing site for a Karachi coaching institute — course listings, enquiry flow and a fully responsive layout that loads fast on low-end mobile connections.",
-    tech: ["HTML", "CSS", "Responsive"],
-    codeUrl: "https://github.com/hunain339/Aims-caoching-website-by-M-Hunain",
-    liveUrl: "https://aims-coaching-centre.vercel.app",
-    image: previewAims,
+      "Authored a structured, multi-page technical reference covering DRF fundamentals through Docker and MySQL. Used as a personal interview-prep and study tool — doubles as a documentation-writing sample.",
+    tech: ["Python", "ReportLab", "12+ pages"],
+    image: previewGuide,
   },
 ];
 

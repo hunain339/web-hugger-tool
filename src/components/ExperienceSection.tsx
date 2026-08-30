@@ -1,6 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 const items = [
   {
