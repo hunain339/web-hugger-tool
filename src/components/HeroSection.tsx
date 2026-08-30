@@ -92,7 +92,7 @@ const HeroSection = () => {
               transition={{ delay: 0.45, duration: 0.5 }}
               className="text-lg md:text-2xl font-semibold text-primary mb-6 tracking-tight"
             >
-              Muhammad Hunain Hussain <span className="text-muted-foreground/60 font-normal">|</span> CTO at Alpha Orbit
+              Muhammad Hunain Hussain <span className="text-muted-foreground/60 font-normal">|</span> Backend Developer
             </motion.h2>
 
             <motion.p
@@ -101,8 +101,8 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="text-base md:text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed"
             >
-              Django &amp; DRF engineer shipping production REST APIs, data pipelines, and secure
-              system architecture — from database schema to deployment on AWS EC2.
+              Self-taught backend developer with 7+ months of hands-on Django/DRF work — building
+              production REST APIs with auth, caching, query optimization and full-text search.
             </motion.p>
 
             {/* Meta row: Karachi + Available */}
