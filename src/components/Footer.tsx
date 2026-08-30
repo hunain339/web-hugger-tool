@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Github, ArrowUp } from "lucide-react";
+import { Mail, Github, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,7 +9,6 @@ const Footer = () => {
         </p>
         <div className="flex items-center gap-3">
           {[
-            { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hunain-hussain-305a90382", label: "LinkedIn" },
             { icon: Github, href: "https://github.com/hunain339", label: "GitHub" },
             { icon: Mail, href: "mailto:hunainakramhussain12345@gmail.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (

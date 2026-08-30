@@ -11,6 +11,7 @@ import previewGuide from "@/assets/preview-main.jpg";
 
 interface Project {
   title: string;
+  date: string;
   description: string;
   tech: string[];
   codeUrl?: string;
@@ -21,6 +22,7 @@ interface Project {
 
 const flagshipProject: Project = {
   title: "Tweetbar — Twitter Clone REST API",
+  date: "2024 — Present",
   description:
     "Built from scratch: JWT auth, tweet CRUD, comments, likes, notifications and view counters. Eliminated N+1 queries with select_related / prefetch_related — measured and documented performance gains. Integrated view-level and low-level caching, rate limiting and full-text search. Deployed live on Vercel with Supabase (PostgreSQL + storage); includes admin dashboard.",
   tech: ["Django", "DRF", "PostgreSQL", "Supabase", "Vercel"],
@@ -32,6 +34,7 @@ const flagshipProject: Project = {
 const webProjects: Project[] = [
   {
     title: "Job Board Platform",
+    date: "2025",
     description:
       "Deployed a full job board application to AWS EC2 with a working CI/CD pipeline. Handled infrastructure, deployment and domain configuration end-to-end.",
     tech: ["Django", "DRF", "AWS EC2", "CI/CD"],
@@ -40,6 +43,7 @@ const webProjects: Project[] = [
   },
   {
     title: "DRF Reference Guide",
+    date: "2025",
     description:
       "Authored a structured, multi-page technical reference covering DRF fundamentals through Docker and MySQL. Used as a personal interview-prep and study tool — doubles as a documentation-writing sample.",
     tech: ["Python", "ReportLab", "12+ pages"],
@@ -82,6 +86,7 @@ const FlagshipCard = ({ project }: { project: Project }) => (
       <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
         {project.title}
       </h3>
+      <p className="text-xs font-semibold text-primary">{project.date}</p>
       <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
         {project.description}
       </p>
@@ -169,6 +174,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         <h3 className="text-xl font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
           {project.title}
         </h3>
+        <p className="text-xs font-semibold text-primary">{project.date}</p>
 
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">{project.description}</p>
 
