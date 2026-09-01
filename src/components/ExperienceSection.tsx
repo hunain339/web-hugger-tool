@@ -1,8 +1,21 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Briefcase } from "lucide-react";
 
 const items = [
+  {
+    icon: Briefcase,
+    title: "Chief Technology Officer — Alpha Orbit",
+    org: "Alpha Orbit",
+    date: "2025 — Present",
+    badge: "Current",
+    accent: "primary",
+    bullets: [
+      "Own backend architecture, database design, data pipelines, and security across the product.",
+      "Lead system design decisions for a small founding team, translating product requirements into production infrastructure.",
+      "Set technical direction and engineering standards as the company's sole backend/infrastructure owner.",
+    ],
+  },
   {
     icon: GraduationCap,
     title: "BS Artificial Intelligence (BSAI)",
@@ -19,6 +32,7 @@ const items = [
     accent: "accent",
   },
 ];
+
 
 
 const ExperienceSection = () => {

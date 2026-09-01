@@ -87,15 +87,19 @@ const AboutSection = () => {
             className="md:col-span-3 space-y-5"
           >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Self-taught backend developer with 7+ months of hands-on Django/DRF development,
-              including Tweetbar — a full-featured Twitter-clone REST API covering auth, caching,
-              query optimization and full-text search.
+              Self-taught backend developer and{" "}
+              <span className="text-foreground font-semibold">CTO at Alpha Orbit</span>, where I own
+              backend architecture, data pipelines, security and system design for a production
+              startup. 7+ months of hands-on Django/DRF development, including Tweetbar — a
+              full-featured Twitter-clone REST API covering auth, caching, query optimization and
+              full-text search.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              I take technical ownership of system design, database modelling, data pipelines,
-              and security — carrying each decision from schema design through production
-              deployment.
+              As the sole backend and infrastructure owner, I take technical ownership of system
+              design, database modelling, data pipelines and security — carrying each decision from
+              schema design through production deployment.
             </p>
+
             <p className="text-base text-muted-foreground leading-relaxed">
               Currently pursuing a{" "}
               <span className="text-foreground font-semibold">BSAI at Iqra University</span> in
