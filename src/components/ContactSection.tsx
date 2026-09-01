@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2, Linkedin, Github } from "lucide-react";
 import { RESUME_URL } from "@/lib/resume";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
