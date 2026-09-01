@@ -101,6 +101,31 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.25, duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-3 mb-10"
+        >
+          {[
+            { icon: Linkedin, href: "https://linkedin.com/in/hunain-hussain", label: "LinkedIn" },
+            { icon: Github, href: "https://github.com/hunain339", label: "GitHub" },
+          ].map(({ icon: Icon, href, label }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+            >
+              <Icon size={15} />
+              {label}
+            </a>
+          ))}
+        </motion.div>
+
+
+
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
