@@ -108,7 +108,7 @@ const ContactSection = () => {
           className="flex flex-wrap items-center justify-center gap-3 mb-10"
         >
           {[
-            { icon: Linkedin, href: "https://linkedin.com/in/hunain-hussain", label: "LinkedIn" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hunain-hussain-305a90382", label: "LinkedIn" },
             { icon: Github, href: "https://github.com/hunain339", label: "GitHub" },
           ].map(({ icon: Icon, href, label }) => (
             <a
