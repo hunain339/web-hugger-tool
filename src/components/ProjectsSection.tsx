@@ -7,7 +7,8 @@ import Tilt3D from "./Tilt3D";
 
 import previewTweet from "@/assets/preview-tweet.jpg";
 import previewJobBoard from "@/assets/preview-jobboard.jpg";
-import previewGuide from "@/assets/preview-main.jpg";
+import previewChaiHub from "@/assets/preview-chaihub.jpg";
+import previewAims from "@/assets/preview-aims.jpg";
 
 interface Project {
   title: string;
@@ -42,12 +43,22 @@ const webProjects: Project[] = [
     image: previewJobBoard,
   },
   {
-    title: "DRF Reference Guide",
+    title: "ChaiHub — Restaurant Showcase & Reservations",
     date: "2025",
     description:
-      "Authored a structured, multi-page technical reference covering DRF fundamentals through Docker and MySQL. Used as a personal interview-prep and study tool — doubles as a documentation-writing sample.",
-    tech: ["Python", "ReportLab", "12+ pages"],
-    image: previewGuide,
+      "Full-stack restaurant platform with a real-time table reservation system for fixed 4-seat tables: availability checking, Redis-based locking to prevent race conditions on concurrent bookings, and Celery-driven 30-minute auto-expiry for pending bookings. Includes an admin approve/reject dashboard with status filters and a notification system (in-app + email via Celery) with a polling notification bell in the navbar.",
+    tech: ["Django", "DRF", "Redis", "Celery", "Supabase"],
+    liveUrl: "https://chai-hub.vercel.app/",
+    image: previewChaiHub,
+  },
+  {
+    title: "AIMS Coaching Centre",
+    date: "2024",
+    description:
+      "My first-ever web project — a responsive site for a coaching centre, designed and built in about an hour with plain HTML, CSS and JavaScript.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://aims-coaching-centre.vercel.app/",
+    image: previewAims,
   },
 ];
 
