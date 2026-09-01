@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { lazy, Suspense } from "react";
-import { ArrowDown, Github, Mail, Download, MapPin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import myPic from "@/assets/mypic.jpeg";
 import MagneticButton from "./MagneticButton";
 import { RESUME_URL } from "@/lib/resume";
@@ -92,7 +92,7 @@ const HeroSection = () => {
               transition={{ delay: 0.45, duration: 0.5 }}
               className="text-lg md:text-2xl font-semibold text-primary mb-6 tracking-tight"
             >
-              Muhammad Hunain Hussain <span className="text-muted-foreground/60 font-normal">|</span> Backend Developer
+              Muhammad Hunain Hussain <span className="text-muted-foreground/60 font-normal">|</span> CTO at Alpha Orbit
             </motion.h2>
 
             <motion.p
@@ -101,9 +101,11 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="text-base md:text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed"
             >
-              Self-taught backend developer with 7+ months of hands-on Django/DRF work — building
-              production REST APIs with auth, caching, query optimization and full-text search.
+              CTO at Alpha Orbit, owning backend architecture, database design, data pipelines and
+              security — with 7+ months of hands-on Django/DRF work building production REST APIs
+              with auth, caching, query optimization and full-text search.
             </motion.p>
+
 
             {/* Meta row: Karachi + Available */}
             <motion.div
@@ -161,7 +163,9 @@ const HeroSection = () => {
             >
               {[
                 { icon: Github, href: "https://github.com/hunain339", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/hunain-hussain", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:hunainakramhussain12345@gmail.com", label: "Email" },
+
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={href}

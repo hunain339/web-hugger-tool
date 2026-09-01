@@ -1,8 +1,21 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Briefcase } from "lucide-react";
 
 const items = [
+  {
+    icon: Briefcase,
+    title: "Chief Technology Officer — Alpha Orbit",
+    org: "Alpha Orbit",
+    date: "2025 — Present",
+    badge: "Current",
+    accent: "primary",
+    bullets: [
+      "Own backend architecture, database design, data pipelines, and security across the product.",
+      "Lead system design decisions for a small founding team, translating product requirements into production infrastructure.",
+      "Set technical direction and engineering standards as the company's sole backend/infrastructure owner.",
+    ],
+  },
   {
     icon: GraduationCap,
     title: "BS Artificial Intelligence (BSAI)",
@@ -21,6 +34,7 @@ const items = [
 ];
 
 
+
 const ExperienceSection = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -37,11 +51,12 @@ const ExperienceSection = () => {
           className="text-center mb-16"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
-            Education
+            Experience & Education
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            My <span className="text-gradient-primary">Studies</span>
+            My <span className="text-gradient-primary">Journey</span>
           </h2>
+
         </motion.div>
 
         <div className="relative pl-8 md:pl-12">
@@ -88,6 +103,17 @@ const ExperienceSection = () => {
                     </div>
                     <p className="text-sm text-primary font-medium mb-2">{item.org}</p>
                     <p className="text-xs text-muted-foreground">{item.date}</p>
+                    {"bullets" in item && item.bullets && (
+                      <ul className="mt-4 space-y-2">
+                        {item.bullets.map((b) => (
+                          <li key={b} className="text-sm text-muted-foreground flex gap-2 leading-relaxed">
+                            <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                   </div>
                 </motion.div>
               );
